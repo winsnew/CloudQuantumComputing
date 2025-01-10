@@ -1,4 +1,4 @@
-# 🚀 Quantum Computing Exploration 🌌
+# 🚀 Quantum Computing Exploration (Cloud Basic Usage)🌌
 
 Welcome to **Quantum Computing Exploration**, a journey into the realm of quantum mechanics, qubits, and entanglement! This project showcases how we harness the surreal power of quantum computing using IBM Quantum's cloud-based services. 🌐⚛️
 
