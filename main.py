@@ -1,20 +1,25 @@
 from BE.list import service
+from comp.sample import execute_circuit
 
 def main():
     print("\n===== Quantum Cloud Test =====")
 
-    backends = service.backends()
-    for idx, backends in enumerate(backends):
-        print(f"{idx + 1}. {backends}")
+    backends = list(service.backends())
+    print("\nList Backend Available:")
+    for backend in backends:
+        print(f"- {backend.name}") 
     
     try:
-        choose = int(input("\nChoose Quantum Backend: "))
-        if choose < 1 or choose > len(backends):
-            raise ValueError("Choose Not Found")
-        backend = backends[choose - 1]
+        choose = input("\nChoose Quantum Backend (name): ").strip()
+        backend = next((b for b in backends if b.name == choose), None)
+        if backend is None:
+            raise ValueError(f"Backend '{choose}' not found. Please choose a valid backend.")
         print(f"\nChoose backend: {backend}")
     except ValueError as e:
         print(f"\nError: {e}")
+        return
+    
+    execute_circuit(backend)
 
 if __name__ == "__main__":
     main()

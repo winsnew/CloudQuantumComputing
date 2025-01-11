@@ -12,7 +12,7 @@ def execute_circuit(backend):
 
     print("\nRunning Backend Circuit...")
     sampler = Sampler(backend=backend)
-    job = sampler.run(qc)
+    job = sampler.run(circuits=qc)
 
     result = job.result()
     counts = result.quasi_dists[0].binary_probabilities()
