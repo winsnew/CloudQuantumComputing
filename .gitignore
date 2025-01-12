@@ -1,3 +1,4 @@
 .env
 BE/__pycache__
 comp/__pycache__
+comp/block
