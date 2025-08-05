@@ -20,16 +20,16 @@ def main():
         print(f"\nError: {e}")
         return
     
-    start_private_key = int(input("Enter start of private key range: ").strip())
-    end_private_key = int(input("Enter end of private key range: ").strip())
-    target_hash160 = int(input("Enter target Hash160: ").strip(), 16)  # Input as hexadecimal
+    start_random = int(input("Enter start of rand range: ").strip())
+    end_random = int(input("Enter end of rand range: ").strip())
+    target_num = int(input("Enter target Num: ").strip(), 16)  
 
     # Execute Grover's search
-    found_key = execute_grover_search(backend, start_private_key, end_private_key, target_hash160)
-    if found_key:
-        print(f"Private Key Found: {found_key}")
+    found_num = execute_grover_search(backend, start_random, end_random, target_num)
+    if found_num:
+        print(f"State Found: {found_num}")
     else:
-        print("Private Key not found in the given range.")
+        print("State Number not found in the given range.")
 
 if __name__ == "__main__":
     main()
